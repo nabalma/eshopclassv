@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#####REDIRIGER TOUTES LES PAGES VERS LINDEX 
+###### TOUT CE QUI VIENT APRES ? SERA COMME VARIABLE ET VALEUR, EXEMPLE ICI VARIABLE = url et VALEUR = la valeur associée
+######Ne pas confondre $GET et $GETURL
+
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
